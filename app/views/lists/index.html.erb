@@ -1,9 +1,22 @@
-<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
+<%= render "banner", list: @list %>
 
-<h1>My movie lists</h1>
-  <ul>
-  <% @lists.each do |list| %>
-    <%= list.name%>
-  <% end %>
-</ul>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.gqmagazine.fr/photos/6399e729aa342b4423bab367/16:9/w_2560%2Cc_limit/GettyImages-636899879.jpg)";>
+  <div class="container">
+    <h1>Save any kind of movies</h1>
+  </div>
+</div>
+
+<div class = "container mt-3">
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.image_url %>)">
+          <%= list.name %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%= render "footer", list: @list %>
