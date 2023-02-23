@@ -1,4 +1,4 @@
-<%= render "banner", list: @list %>
+<%= render "navbar", list: @list %>
 
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.gqmagazine.fr/photos/6399e729aa342b4423bab367/16:9/w_2560%2Cc_limit/GettyImages-636899879.jpg)";>
@@ -6,6 +6,8 @@
     <h1>Save any kind of movies</h1>
   </div>
 </div>
+
+<%= link_to "Delete a list", list_path(@lists), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-flat" %>
 
 <div class = "container mt-3">
   <div class="cards">
