@@ -1,2 +1,12 @@
 <h1>Reviews#new</h1>
 <p>Find me in app/views/reviews/new.html.erb</p>
+
+<div class="container p-5" style="width:600px;">
+  <div class="row justify-content-center">
+  <h1 class="text-center"><i class="fa-solid fa-utensils"></i> Add a review<i class="fa-solid fa-utensils"></i> </h1>
+    <div class="col-8 p-5">
+        <%= render "form", review: @review, list: @list %>
+        <%= link_to "Back to list", lists_path, class: "btn btn-secondary mt-3" %>
+    </div>
+  </div>
+</div>

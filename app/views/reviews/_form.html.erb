@@ -1,0 +1,7 @@
+<%= simple_form_for [list, review] do |f| %>
+  <%= f.input :comment %>
+  <%= f.input :rating, input_html: { min: '0', max: '5'} %>
+  <div class="d-grid gap-2 col-6 mx-auto p-5">
+    <%= f.submit "Save my review", class: "btn btn-primary" %>
+  </div>
+<% end %>
