@@ -16,9 +16,9 @@
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   text-decoration: none;
+  flex-grow: 1;
 }
 
 // Smallest device

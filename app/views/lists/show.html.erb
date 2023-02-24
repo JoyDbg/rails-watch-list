@@ -6,24 +6,22 @@
 </div>
 
 <div class="container">
+  <div class = "button-placement p-2">
+    <%= link_to "Add a movie to the list", new_list_bookmark_path(@list), class: "btn btn-dark" %>
+    <%= link_to "Delete the list", list_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:  "btn btn-dark" %>
+  </div>
 
-  <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-flat align-item: right" %>
-  
   <div class = "container mt-3">
     <div class="cards">
       <% @list.bookmarks.each do |bookmark| %>
         <div class="card-trip">
           <img src="<%= bookmark.movie.poster_url%>">
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= bookmark.movie.title %></h2>
-              <p><%= bookmark.movie.overview %></p>
-            </div>
-            <%= link_to "Delete",
-            bookmark_path(bookmark),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-            %>
-          </div>
+        <div class="card-trip-infos">
+        <div>
+          <h2><%= bookmark.movie.title %></h2>
+          <p><%= bookmark.movie.overview %></p>
+        </div><%= link_to "Delete", bookmark_path(bookmark),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
         </div>
       <% end %>
     </div>

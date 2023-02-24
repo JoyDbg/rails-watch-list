@@ -1,16 +1,16 @@
 <%= render "navbar", list: @list %>
 
 <div class="container text-center p-5">
-  <h1>New Bookmark</h1>
+  <h3>Add a movie to your <strong><%= @list.name %></strong> list</h3>
 </div>
 
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
       <%= simple_form_for [@list, @bookmark] do |f| %>
-        <%= f.input :comment %>
-        <%= f.association :movie %>
-        <%= f.button :submit, class: "btn btn-flat" %>
+        <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
+        <%= f.association :movie, prompt: "Select a movie", input_html: {data: { controller: "tom-select"}} %>
+        <%= f.submit class: "btn btn-dark" %>
       <% end %>
     </div>
   </div>
