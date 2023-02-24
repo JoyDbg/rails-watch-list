@@ -3,16 +3,17 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.gqmagazine.fr/photos/6399e729aa342b4423bab367/16:9/w_2560%2Cc_limit/GettyImages-636899879.jpg)";>
   <div class="container">
     <h1>Save any kind of movies</h1>
-    <p>In your lists</p>
+    <p><span data-controller="typed-js"></span></p>
   </div>
 </div>
+
 
 <div class = "container mt-3 p-5">
   <div class="cards">
     <% @lists.each do |list| %>
-      <%= link_to list_path(list) do %>
+      <%= link_to list_path(list), class: 'card-link' do %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.image_url %>)">
-          <%= list.name %>
+          <h2><%= list.name %></h2>
         </div>
       <% end %>
     <% end %>
