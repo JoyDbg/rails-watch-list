@@ -11,7 +11,9 @@
   </head>
 
   <body>
-  <%= render "navbar", list: @list %>
+  <%= render "lists/navbar", list: @list %>
     <%= yield %>
+  <%= render "lists/footer", list: @list %>
+
   </body>
 </html>

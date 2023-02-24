@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.gqmagazine.fr/photos/6399e729aa342b4423bab367/16:9/w_2560%2Cc_limit/GettyImages-636899879.jpg)";>
+<div class="banner banner-height" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.4)), url(<%= @list.image_url %>)";>
   <div class="container">
     <h1><%= @list.name %></h1>
   </div>
@@ -45,5 +45,3 @@
   </div>
 
 </div>
-
-<%= render "footer", list: @list %>
